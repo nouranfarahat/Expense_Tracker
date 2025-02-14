@@ -1,15 +1,17 @@
-import 'package:expense_tracker/core/model/expense.dart';
+import 'package:expense_tracker/data/model/expense.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseItem extends StatelessWidget {
   final Expense expense;
   final VoidCallback onTap;
-  const ExpenseItem({super.key, required this.expense, required this.onTap});
+  final Color backgroundColor;
+  const ExpenseItem({super.key, required this.expense, required this.onTap,required this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: backgroundColor,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(
         //isThreeLine: true,
