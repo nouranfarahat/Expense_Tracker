@@ -29,8 +29,11 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-          child: const Icon(Icons.add,color: Colors.white,),
+          backgroundColor: Colors.blue,
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
           onPressed: () => Navigator.pushNamed(context, addExpenseScreenRoute)),
       body: BlocBuilder<ExpenseCubit, ExpenseState>(
         builder: (context, state) {
@@ -54,30 +57,30 @@ class HomeScreen extends StatelessWidget {
   Widget _buildExpensesList(BuildContext context, List<Expense> expenses) {
     return Expanded(
         child: ListView.builder(
-        itemCount: expenses.length,
-        itemBuilder: (context, index) {
-          final expense = expenses[index];
-          return Dismissible(
-            key: Key(expense.id),
-            direction: DismissDirection.endToStart,
-            background: Container(
-              color: Colors.red,
-              alignment: Alignment.centerRight,
-              padding: EdgeInsets.only(right: 15),
-              child: Icon(Icons.delete, color: Colors.white),
-            ),
-            confirmDismiss: (_) => _showDeleteConfirmation(context),
-            onDismissed: (_) => context.read<ExpenseCubit>().deleteExpense(expense.id),            child: ExpenseItem(
-              expense: expense,
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => EditExpenseScreen(expense: expense)),
-              ),
-              backgroundColor: index.isEven ? pastelGreen : pastelBlue,
-            ),
-          );
-        }));
+            itemCount: expenses.length,
+            itemBuilder: (context, index) {
+              final expense = expenses[index];
+              return Dismissible(
+                key: Key(expense.id),
+                direction: DismissDirection.endToStart,
+                background: Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerRight,
+                  padding: EdgeInsets.only(right: 15),
+                  child: Icon(Icons.delete, color: Colors.white),
+                ),
+                confirmDismiss: (_) => _showDeleteConfirmation(context),
+                onDismissed: (_) =>
+                    context.read<ExpenseCubit>().deleteExpense(expense.id),
+                child: ExpenseItem(
+                  expense: expense,
+                  onTap: () => Navigator.pushNamed(
+                      context, editExpenseScreenRoute,
+                      arguments: expense),
+                  backgroundColor: index.isEven ? pastelGreen : pastelBlue,
+                ),
+              );
+            }));
   }
 
   Future<bool?> _showDeleteConfirmation(BuildContext context) async {
@@ -108,7 +111,8 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Text(
             'Total: \$${total.toStringAsFixed(2)}',
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.white),
+            style: const TextStyle(
+                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
           ),
         ),
       ),
