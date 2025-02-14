@@ -21,8 +21,11 @@ A simple and intuitive expense tracking application built with Flutter and Cubit
 - Routing: Navigation between screens is handled using a custom AppRoute
 ## Project Structure
   lib/
+  
 ├── constants/
+
 │   └── strings.dart          # Route names and constants
+
 ├── core/
 │   ├── cubit/
 │   │   ├── expense_cubit.dart  # Business logic
