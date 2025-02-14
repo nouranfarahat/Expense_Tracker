@@ -80,20 +80,13 @@ class _EditExpenseScreenState extends State<EditExpenseScreen> {
   }
 
   void _updateExpense() {
-    final updatedExpense = Expense(
+    final updatedExpense = widget.expense.copyWith(
       amount: double.parse(_amountController.text),
       description: _descriptionController.text,
       category: _selectedCategory,
       currency: _selectedCurrency,
     );
-    if (updatedExpense.amount != null) {
-      context.read<ExpenseCubit>().updateExpense(updatedExpense);
-      Navigator.pop(context);
-    } else {
-      // Show error if amount is invalid
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter a valid amount')),
-      );
+    context.read<ExpenseCubit>().updateExpense(updatedExpense);
+    Navigator.pop(context);
     }
-  }
 }

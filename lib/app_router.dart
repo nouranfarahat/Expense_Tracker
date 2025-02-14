@@ -34,12 +34,19 @@ class AppRouter{
           ),
         );
 
-      case editExpenseScreenRoute:
+     /* case editExpenseScreenRoute:
         final expense = settings.arguments as Expense;
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: _expenseCubit,
             child: EditExpenseScreen(expense: expense),
+          ),
+        );*/
+      case editExpenseScreenRoute:  // Add this
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: _expenseCubit,
+            child: EditExpenseScreen(expense: settings.arguments as Expense),
           ),
         );
       default:
