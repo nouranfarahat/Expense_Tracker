@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   //final AppRouter appRouter;
 
   static const pastelBlue = Color(0xFFE3F2FD);
-  static const pastelGreen = Color(0xFFC8E6C9);
+  static const pastelGreen = Color(0xFFCEE8CF);
   const HomeScreen({super.key});
 
   @override
@@ -29,7 +29,8 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
+        backgroundColor: Colors.blue,
+          child: const Icon(Icons.add,color: Colors.white,),
           onPressed: () => Navigator.pushNamed(context, addExpenseScreenRoute)),
       body: BlocBuilder<ExpenseCubit, ExpenseState>(
         builder: (context, state) {
@@ -102,11 +103,12 @@ class HomeScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Card(
+        color: Colors.blue,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
             'Total: \$${total.toStringAsFixed(2)}',
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.white),
           ),
         ),
       ),
