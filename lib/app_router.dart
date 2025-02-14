@@ -1,9 +1,12 @@
 import 'package:expense_tracker/constants/strings.dart';
 import 'package:expense_tracker/core/cubit/expense_cubit.dart';
 import 'package:expense_tracker/presentation/expenses/screens/add_expense_screen.dart';
+import 'package:expense_tracker/presentation/expenses/screens/edit_expense_screen.dart';
 import 'package:expense_tracker/presentation/expenses/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'data/model/expense.dart';
 
 class AppRouter{
   ExpenseCubit _expenseCubit=ExpenseCubit();
@@ -28,6 +31,15 @@ class AppRouter{
           builder: (_) => BlocProvider.value(
             value: _expenseCubit,
             child: const AddExpenseScreen(),
+          ),
+        );
+
+      case editExpenseScreenRoute:
+        final expense = settings.arguments as Expense;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: _expenseCubit,
+            child: EditExpenseScreen(expense: expense),
           ),
         );
       default:

@@ -18,4 +18,21 @@ class Expense {
     DateTime? date,
   })  : id = id ?? const Uuid().v4(),
         date = date ?? DateTime.now();
+  Expense copyWith({
+    String? id,
+    double? amount,
+    String? description,
+    String? category,
+    String? currency,
+    DateTime? date,
+  }) {
+    return Expense(
+      id: id ?? this.id,
+      amount: amount ?? this.amount,
+      description: description ?? this.description,
+      category: category ?? this.category,
+      currency: currency ?? this.currency,
+      date: date ?? this.date,
+    );
+  }
 }
