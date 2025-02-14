@@ -43,37 +43,37 @@ A simple and intuitive expense tracking application built with Flutter and Cubit
 
 ## Implementation Details
 1. State Management with Cubit
-  ExpenseCubit: Manages the state of expenses (adding, updating, deleting).
+    ExpenseCubit: Manages the state of expenses (adding, updating, deleting).
 
-  ExpenseState: Represents different states (initial, loading, loaded, error).
+    ExpenseState: Represents different states (initial, loading, loaded, error).
 
 2. Routing
-  AppRouter: Handles navigation between screens using named routes.
+    AppRouter: Handles navigation between screens using named routes.
 
-  Routes:
+    Routes:
 
-    homeScreenRoute: The main screen displaying the list of expenses.
-
-    addExpenseScreenRoute: Screen for adding a new expense.
-
-    editExpenseScreenRoute: Screen for editing an existing expense.
+      homeScreenRoute: The main screen displaying the list of expenses.
+  
+      addExpenseScreenRoute: Screen for adding a new expense.
+  
+      editExpenseScreenRoute: Screen for editing an existing expense.
 
 3. UI Components
-  HomeScreen: Displays the list of expenses with alternating card colors (pastel blue and green).
-
-  AddExpenseScreen: A form for adding new expenses with validation.
-
-  EditExpenseScreen: A form for editing existing expenses.
-
-  ExpenseItem: A reusable widget for displaying individual expense items.
+    HomeScreen: Displays the list of expenses with alternating card colors (pastel blue and green).
+  
+    AddExpenseScreen: A form for adding new expenses with validation.
+  
+    EditExpenseScreen: A form for editing existing expenses.
+  
+    ExpenseItem: A reusable widget for displaying individual expense items.
 
 4. Data Model
-  Expense: Represents an expense with fields like id, amount, description, category, currency, and date.
-
+    Expense: Represents an expense with fields like id, amount, description, category, currency, and date.
+  
 5. Navigation
-  Uses Navigator.pushNamed() and Navigator.pop() for screen transitions.
+    Uses Navigator.pushNamed() and Navigator.pop() for screen transitions.
 
-  Confirmation dialog appears before deleting an expense.
+    Confirmation dialog appears before deleting an expense.
 
 
 
