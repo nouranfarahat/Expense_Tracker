@@ -37,7 +37,6 @@ A simple and intuitive expense tracking application built with Flutter and Cubit
 │   └── models/
 
 │       └── expense.dart       # Expense data model
-
         └── income.dart       # Income data model
         
 ├── presentation/
