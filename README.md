@@ -24,36 +24,36 @@ A simple and intuitive expense tracking application built with Flutter and Cubit
   
 ├── constants/
 
-│   └── strings.dart          # Route names and constants
+  │   └── strings.dart          # Route names and constants
 
 ├── core/
 
-│   ├── cubit/
-
-│   │   ├── expense_cubit.dart  # Business logic
-
-│   │   └── expense_state.dart  # State definitions
-
-│   └── models/
-
-│       └── expense.dart       # Expense data model
-        └── income.dart       # Income data model
+  │   ├── cubit/
+  
+    │   │   ├── expense_cubit.dart  # Business logic
+    
+    │   │   └── expense_state.dart  # State definitions
+  
+  │   └── models/
+  
+    │       └── expense.dart       # Expense data model
+            └── income.dart       # Income data model
         
 ├── presentation/
-
-│   └── expenses/
-
-│       ├── screens/
-
-│       │   ├── home_screen.dart      # Main screen
-
-│       │   ├── add_expense_screen.dart # Add expense screen
-
-│       │   └── edit_expense_screen.dart # Edit expense screen
-
-│       └── widgets/
-
-│           └── expense_item.dart     # Reusable expense item widget
+  
+  │   └── expenses/
+  
+    │       ├── screens/
+  
+    │       │   ├── home_screen.dart      # Main screen
+    
+    │       │   ├── add_expense_screen.dart # Add expense screen
+    
+    │       │   └── edit_expense_screen.dart # Edit expense screen
+    
+  │       └── widgets/
+  
+    │           └── expense_item.dart     # Reusable expense item widget
 
 ├── app_router.dart            # Custom router for navigation
 
